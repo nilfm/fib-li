@@ -179,7 +179,10 @@ write2(R):- write(R),!.
 % costOfThisSolution(M,Cost):- between(0,20,I), Cost is 20-I, team(T), findall(R,member(double(T,R),M),L), length(L,Cost), !.
 
 % solution of this exam:
-costOfThisSolution(M,Cost):- between(0, 20, I), Cost is 20-I, findall(team(T), member(hasTwoDoubles(T), M), L), length(L, Cost), !.
+costOfThisSolution(M,Cost):- 
+    findall(team(T), member(hasTwoDoubles(T), M), L), 
+    length(L, Cost), 
+    !.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
